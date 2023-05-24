@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    backendURL: 'https://api.example.com'
+    backendURL: 'https://reminder-server-wj8s.onrender.com'
   };
   
