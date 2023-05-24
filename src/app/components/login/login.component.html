@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <div>
+        <h1>Never forget <br/> a thing..</h1>
+        
+    </div>
+    <div class="main">
+        <p class="sign">Sign in</p>
+        <form class="form1" [formGroup]="loginform" (ngSubmit)="onSubmit()">
+            <input class="un " type="text" placeholder="Username" formControlName="email">
+            <input class="pass" type="password" placeholder="Password" formControlName="password">
+            <button class="submit">Sign in</button>
+            <p class="forgot"><a href="#">Forgot Password?</a></p>
+            <a routerLink="/signup">
+                <p>create account</p>
+            </a>
+        </form>
+    </div>
+</div>

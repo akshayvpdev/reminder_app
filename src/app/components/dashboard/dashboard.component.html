@@ -1,0 +1,19 @@
+<div class="container">
+  <div id="newtask">
+
+
+    <form [formGroup]="reminderform" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" #date [value]="reminderform.get('selectedDate')?.value | date: 'yyyy-MM-dd'" placeholder="Choose a date" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <input class="input" type="text" placeholder="add reminder..." formControlName="description"/>
+      <button id="push">Add</button>
+    </form>
+  
+ 
+  </div>
+  <button class="view" routerLink="/list">view reminders</button>
+
+</div>

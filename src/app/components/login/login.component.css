@@ -1,0 +1,116 @@
+h1 {
+  font-size: 3.9em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  padding-left:100px ;
+  color: #e6dee3;
+}
+
+.wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main {
+  background-image: linear-gradient(135deg, #fd8b19 10%, #e80505 100%);
+
+  width: 400px;
+  height: 450px;
+  margin:auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+  padding-top: 40px;
+  color: #2c2c2d;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 23px;
+  text-align: center;
+}
+
+.un,
+.pass {
+  width: 80%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  margin-left: 46px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+form.form1 {
+  padding-top: 40px;
+}
+
+form p {
+  text-align: center;
+  color: white;
+}
+
+form input {
+  background-color: white;
+}
+
+.un:focus,
+.pass:focus {
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
+}
+
+.submit {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9c27b0, #e040fb);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 35%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.forgot {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #373737;
+  padding-top: 15px;
+  text-align: center;
+}
+
+a {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #d1d1d1;
+}
+
+div p {
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .main {
+    border-radius: 0px;
+    width: 300px;
+  }
+
+  .un,
+  .pass {
+    width: 100%;
+    margin-left: 0;
+  }
+}
