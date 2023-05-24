@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
+import { catchError } from 'rxjs/operators';
 
 const options = {
   headers: new HttpHeaders(),
@@ -29,44 +30,77 @@ export class UserService {
     return options;
   }
 // ----------------------------------------------------------------------------------------------------------------------------------
-  register(email:any,name:any,password:any){
-    const data={
-      email,
-      name,
-      password
-    }
-    return this.http.post(`${this.backendURL}/user/register`, data);
-  }
+register(email: any, name: any, password: any) {
+  const data = {
+    email,
+    name,
+    password
+  };
+
+  return this.http.post(`${this.backendURL}/user/register`, data)
+    .pipe(
+      catchError((error) => {
+        // Handle or log the error
+        console.error(error);
+        throw error; // Rethrow the error to propagate it to the caller
+      })
+    );
+}
 
 
 
   // ----------------------------------------------------------------------------------------------------------------------------------
-  login(email:any,password:any){
-    const data={
+  login(email: any, password: any) {
+    const data = {
       email,
       password
-    }
-    return this.http.post(`${this.backendURL}/user/login`, data);
+    };
 
+    return this.http.post(`${this.backendURL}/user/login`, data)
+      .pipe(
+        catchError((error) => {
+          console.error(error);
+          throw error;
+        })
+      );
   }
 
 
-  add(data:any){
-    return this.http.post(`${this.backendURL}/add`,data,this.getoptions())
+
+  add(data: any) {
+    return this.http.post(`${this.backendURL}/add`, data, this.getoptions())
+      .pipe(
+        catchError((error) => {
+          console.error(error);
+          throw error;
+        })
+      );
   }
 
 
-
-  view(){
-    let id =localStorage.getItem('id')
-     return this.http.get(`${this.backendURL}/user/view/`+id)
+  view() {
+    let id = localStorage.getItem('id');
+    return this.http.get(`${this.backendURL}/user/view/` + id)
+      .pipe(
+        catchError((error) => {
+          console.error(error);
+          throw error;
+        })
+      );
   }
 
-  delete(id:any){
-    let data={
+
+  delete(id: any) {
+    let data = {
       id
-    }
-    return this.http.post(`${this.backendURL}/user/delete_item`,data,this.getoptions())
+    };
+    return this.http.post(`${this.backendURL}/user/delete_item`, data, this.getoptions())
+      .pipe(
+        catchError((error) => {
+          console.error(error);
+          throw error;
+        })
+      );
   }
 
 
